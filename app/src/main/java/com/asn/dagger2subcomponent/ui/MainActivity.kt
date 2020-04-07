@@ -2,6 +2,7 @@ package com.asn.dagger2subcomponent.ui
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -50,6 +51,14 @@ class MainActivity : BaseActivity() {
             Log.d(TAG,"mActivity2="+toString())
         }
         Log.d(TAG,mMainService.getMainInfo())
+
+        jumpToSubActivity()
+    }
+
+    private fun jumpToSubActivity() {
+        val intent = Intent(application, SubActivity::class.java)
+        Log.d(TAG, "jump to sub activity")
+        startActivity(intent)
     }
 
     /*
